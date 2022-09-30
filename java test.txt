@@ -1,0 +1,146 @@
+1  what is platform independece ? Explain  it using 
+
+    bytecode is and platform independece where the java file is coverted in .class file and it is a independent and it can write 
+	program can be written in english and coverted into java langauge and run in and operating system.
+	
+2  what is diiference between primitive and non primitive 
+
+
+                   primitive                                                   non primitive	  
+             pre defined values	                                             defined values
+			 the letter start from lowercase                               the letter start from uppercase
+			 it has limited size                                               it doesnot  limited size
+			 byte,int,double,float,boolean,long,short,                         String,Array
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+3 explain class and its members with and example		 
+			 class  is  declared  as a non-static member . If a static member class is analogous to a  class method,
+			 a member class is analogous to an instance field or instance method.
+			 
+4  write a programe to accept two inputs total marks and recived marks, calculate percentange and return;	
+
+
+
+
+
+
+
+
+
+
+
+
+5 remove Duplicate in an array
+
+
+public class Duplicate_int {
+
+public static void main(String[] args) {
+int index=0;
+int[] arr = {10,20,20,50,50,45};
+int size = arr.length;
+int duplicate,flag=0,count;
+int[] anti_dup= new int[size];
+int i,j;
+System.out.println("Before removing duplicate from the array:");
+for(i=0;i<size;i++)
+{
+System.out.println(arr[i]);
+}
+
+for(i=0;i<size;i++)
+{
+count=0;
+for(j=i+1;j<size;j++)
+{
+if(arr[i]==arr[j])
+{
+count=count+1;
+break;
+}
+
+} 
+if(count==0)
+{
+anti_dup[index]=arr[i];
+index++;
+}
+}
+
+for(i=0;i<index;i++)
+{
+arr[i]=anti_dup[i];
+}
+System.out.println("After removing duplicate from the array");
+for(i=0;i<index;i++)
+{
+System.out.println(arr[i]);
+}
+
+}
+}	
+
+
+
+ 7.program find to reverse a number
+
+
+
+class Reverse {
+	
+	
+	static int reverse(int n){
+	
+	int rev = 0; // reversed number
+	int rem; // remainder
+	
+	while(n>0){
+		
+		rem = n%10;
+		rev = (rev*10) + rem;
+		n = n/10;
+	}
+	
+	return rev;
+	}
+class ReverseRunner
+	public static void main (String[] args) {
+		int n = 4526;
+		
+		System.out.print("Reversed Number is "+ reverse(n));
+	}
+}
+
+
+
+
+7.program find to hours tp second
+class Conveter {
+ 
+ 
+
+
+ static void ConvertHours(int n)
+{
+ int minutes, seconds;
+ 
+    minutes = n * 60;
+    seconds = n * 3600;
+ 
+    System.out.println( "Minutes = " + minutes
+        + ", Seconds = " + seconds);
+}
+ 
+class ConveterRunner
+    public static void main (String[] args) {
+    int n = 5;
+    ConvertHours(n);
+    }
+     
+}
+	 
