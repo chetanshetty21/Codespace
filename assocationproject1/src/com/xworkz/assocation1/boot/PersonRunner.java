@@ -11,10 +11,15 @@ public class PersonRunner {
 		Person person1 = new Person("Chetan");
 		Job job = new Job(12854612, " Designer", 8);
 		Email email1 = new Email("Chetansv.xworkz.com", "1275484", 789225217d);
+		
 		Email email2 = new Email("shashanksv.xworkz.com", "753158646", 789225217d);
 		Email[] emails= {email1,email2};
 	
+		person1.setEmail(emails);
+		person1.setJob(job);
+		
 		person1.setShow();
+
 		//job .setCompany();
 
 
