@@ -72,7 +72,7 @@ public class Paint {
 
 	public double getPrice() {
 		return price;
-	}
+	}L
 
 	public void setPrice(double price) {
 		this.price = price;
