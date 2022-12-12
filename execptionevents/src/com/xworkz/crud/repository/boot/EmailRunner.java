@@ -17,6 +17,7 @@ public class EmailRunner {
 		emailRepositoryImpl.create("srinivas12@gmailcom");
 		emailRepositoryImpl.create("charu09@gmail.com");
 		emailRepositoryImpl.create("arjun21@gmail.com");
+		emailRepositoryImpl.create("arjun21@gmail.com");
 		
 		System.out.println( emailRepositoryImpl.totalEmails());
 	}
