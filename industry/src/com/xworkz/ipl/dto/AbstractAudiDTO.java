@@ -13,6 +13,22 @@ public abstract class AbstractAudiDTO implements Serializable {
 	public AbstractAudiDTO() {
 		System.out.println("calling no arg AbstractAudiDTO");
 	}
+	
+
+	public AbstractAudiDTO(String createdBy, LocalDateTime createdDate, String updatedBy, LocalDateTime updatedDate) {
+		super();
+		this.createdBy = createdBy;
+		this.createdDate = createdDate;
+		this.updatedBy = updatedBy;
+		this.updatedDate = updatedDate;
+	}
+
+
+	@Override
+	public String toString() {
+		return "AbstractAudiDTO [createdBy=" + createdBy + ", createdDate=" + createdDate + ", updatedBy=" + updatedBy
+				+ ", updatedDate=" + updatedDate + ", toString()=" + super.toString() + "]";
+	}
 
 	public String getCreatedBy() {
 		return createdBy;

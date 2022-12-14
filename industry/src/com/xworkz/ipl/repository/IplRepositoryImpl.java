@@ -10,16 +10,24 @@ public class IplRepositoryImpl implements IplRepository {
 	@Override
 	public boolean create(IplDTO dto) {
 		System.out.println("running create of ipledto" + dto);
-		if (this.currentIndex >= this.iplDTOs.length) {
+		if (this.currentIndex >= this.iplDTOs.length ) {
 			System.out.println("size exceed cannot add more");
 			throw new IplSizeExceededException();
 
 		}
 
 		this.iplDTOs[this.currentIndex] = dto;
+		System.out.println("saved" + dto + "in index" + currentIndex);
 		this.currentIndex++;
-		System.out.println("saved" + dto + "in index");
+		
 		return true;
 
 	}
+
+	@Override
+	public int total() {
+		// TODO Auto-generated method stub
+		return IplRepository.super.total();
+	}
+	
 }

@@ -56,6 +56,7 @@ public class IplRunner {
 		dto3.setCreatedDate(LocalDateTime.now());
 		iplRepository.create(dto3);
 		
+		
 		IplDTO dto4 = new IplDTO();
 		dto4.setTeamName("DC");
 		dto4.setCaptainName("  Rishabh Pant");
@@ -126,16 +127,7 @@ public class IplRunner {
 		dto9.setCreatedDate(LocalDateTime.now());
 		iplRepository.create(dto9);
 		
-		IplDTO dto10 = new IplDTO();
-		dto10.setTeamName("Gujarat Titans");
-		dto10.setCaptainName(" Hardik Pandya");
-		dto10.setOwnerAlive(true);
-		dto10.setPurse(80);
-		dto10.setNoOfWins(107);
-		dto10.setNoOfDefeats(113);
-		dto10.setCreatedBy("system");
-		dto10.setCreatedDate(LocalDateTime.now());
-		iplRepository.create(dto10);
+		
 	}
 
 }
