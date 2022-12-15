@@ -1,3 +1,4 @@
+
 package com.xworkz.ipl.service;
 
 import com.xworkz.ipl.constant.PizzaSize;
@@ -10,7 +11,6 @@ public class PizzaServiceImpl implements PizzaService {
 		System.out.println("checking validateAndSaveName" + dto);
 		String name = dto.getName();
 		String company = dto.getCompany();
-		boolean cheese = dto.isCheese();
 		String flavour = dto.getFlavour();
 		PizzaSize size = dto.getSize();
 		double price = dto.getPrice();
@@ -42,27 +42,21 @@ public class PizzaServiceImpl implements PizzaService {
 		} else {
 			System.err.println("size is invalid");
 		}
-		if (cheese = true) {
-			System.out.println("cheese is  there");
-			validCheese = true;
-
-		} else {
-			System.err.println("cheese is not there");
-		}
+		
 		if (price >= 50 && price <= 2000) {
 			System.out.println("price is valid");
 			validCheese = true;
 		} else {
 			System.err.println("price is not valid");
 		}
-		if (flavour != null && flavour.length() <= 3 && flavour.length() >= 20) {
+		if (flavour != null && flavour.length() >= 3 && flavour.length() <= 20) {
 			System.err.println("flavour is valid");
 			validFlavour = true;
 		} else {
 			System.out.println("flavour is not valid");
 		}
 
-		if (type != null && type == "VEG" ) {
+		if (type != null && (type.equals("VEG") || type.equals("NON-VEG"))) {
 			System.out.println("type is valid");
 			validType = true;
 
@@ -72,12 +66,6 @@ public class PizzaServiceImpl implements PizzaService {
 		if (validName && validCheese && validSize && validCheese && validPrice && validFlavour && validType) {
 			return true;
 		}
-		return false;
-	}
-
-	@Override
-	public boolean create(PizzaDTO dto) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
