@@ -16,7 +16,7 @@ public class HelmetServiceImpl implements HelmetService {
 
 	@Override
 	public boolean validateAndSave(HelmetDTO dto) {
-		System.out.println("running validateAnd Save method");
+		System.out.println("running validateAnd Save method"+dto);
 		String brand = dto.getBrand();
 		HelmetType type = dto.getType();
 		Double price = dto.getPrice();
