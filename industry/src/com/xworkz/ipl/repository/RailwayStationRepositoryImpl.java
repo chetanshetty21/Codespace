@@ -15,7 +15,8 @@ public class RailwayStationRepositoryImpl implements RailwayStationRepository {
 			throw new StorageFullException("Storage is full");
 
 		}
-		return false;
+		
+		return true;
 	}
 
 }

@@ -18,13 +18,13 @@ public class BakeryRunner {
 		BakeryService service = new BakeryServiceImpl(repository);
 
 		try {
-			System.out.println("after validation");
 			service.validateAndSave(dto);
-
 		} catch (InvalidDataException e) {
-			System.out.println(e.getMessage());
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 	}
 
 }
+s

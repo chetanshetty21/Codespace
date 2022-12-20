@@ -54,6 +54,8 @@ public class RailwayStationServiceImpl implements RailwayStationService {
 		}
 		if (vaildName && validNoOfPlatforms && validArea && validNoOfPlatformTicketPrice) {
 			System.out.println("data is valid ");
+			//call repo here
+			this.repository.save(dto);
 
 		} else {
 			throw new InvalidDataException();
