@@ -22,13 +22,14 @@ public class GameDTO implements Serializable {
 	public String toString() {
 		return "Game [name=" + name + ", type=" + type + ", noOFPlayers=" + noOFPlayers + "]";
 	}
+
 	@Override
 	public boolean equals(Object game) {
 		System.out.println("starting equals method");
 		if (game != null) {
 			if (game instanceof GameDTO) {
 				GameDTO dto = (GameDTO) game;
-				if (dto.name.equals(this .name)) {
+				if (dto.name.equals(this.name)) {
 					System.out.println("company name is matching");
 					return true;
 

@@ -22,6 +22,7 @@ public class CalendarDTO implements Serializable {
 	public String toString() {
 		return "CalendarDTO [companyName=" + companyName + ", price=" + price + ", size=" + size + "]";
 	}
+
 	@Override
 	public boolean equals(Object calendar) {
 		System.out.println("starting equals method");
@@ -29,11 +30,11 @@ public class CalendarDTO implements Serializable {
 			if (calendar instanceof CalendarDTO) {
 				CalendarDTO dto = (CalendarDTO) calendar;
 				if (dto.companyName.equals(this.companyName)) {
-					System.out.println("airport name is matching");
+					System.out.println("company name is matching");
 					return true;
-				
+
 				}
-				}
+			}
 
 		}
 		return false;

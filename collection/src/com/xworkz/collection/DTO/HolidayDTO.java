@@ -2,12 +2,13 @@ package com.xworkz.collection.DTO;
 
 import java.io.Serializable;
 
-public class HolidayDTO implements Serializable{
+public class HolidayDTO implements Serializable {
 	protected String type;
 	protected int noOfHolidayInYear;
 	protected Double noOFDays;
+
 	public HolidayDTO() {
-		// TODO Auto-generated constructor stub
+
 	}
 
 	public HolidayDTO(String type, int noOfHolidayInYear, Double noOFDays) {
@@ -21,6 +22,7 @@ public class HolidayDTO implements Serializable{
 	public String toString() {
 		return "HolidayDTO [type=" + type + ", noOfHolidayInYear=" + noOfHolidayInYear + ", noOFDays=" + noOFDays + "]";
 	}
+
 	@Override
 	public boolean equals(Object holiday) {
 		System.out.println("starting equals method");

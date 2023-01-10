@@ -24,22 +24,36 @@ public class PlaceDTO implements Serializable {
 		return "PlaceDTO [placeName=" + placeName + ", type=" + type + ", entryFee=" + entryFee + "]";
 	}
 
-	@Override
-	public boolean equals(Object place) {
-		System.out.println("starting equals method");
-		if (place != null) {
-			if (place instanceof PlaceDTO) {
-				PlaceDTO dto = (PlaceDTO) place;
-				if (dto.placeName.equals(this.placeName)) {
-					System.out.println("place name is matching");
-					return true;
-				
-				}
-				}
+	
+	
 
-		}
-		return false;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		PlaceDTO other = (PlaceDTO) obj;
+		if (entryFee == null) {
+			if (other.entryFee != null)
+				return false;
+		} else if (!entryFee.equals(other.entryFee))
+			return false;
+		if (placeName == null) {
+			if (other.placeName != null)
+				return false;
+		} else if (!placeName.equals(other.placeName))
+			return false;
+		if (type == null) {
+			if (other.type != null)
+				return false;
+		} else if (!type.equals(other.type))
+			return false;
+		return true;
 	}
+
 	public String getPlaceName() {
 		return placeName;
 	}

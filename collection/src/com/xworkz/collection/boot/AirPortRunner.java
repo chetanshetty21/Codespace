@@ -23,7 +23,7 @@ public class AirPortRunner extends AirportDTO {
 		airport.add(dto4);
 		airport.add(dto5);
 
-		boolean contains = airport.contains(dto3);
+		boolean contains = airport.contains(dto4);
 		System.out.println("contains" + contains);
 	}
 

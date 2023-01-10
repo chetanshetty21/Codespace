@@ -31,13 +31,14 @@ public class AirportDTO implements Serializable {
 			if (airport instanceof AirportDTO) {
 				AirportDTO dto = (AirportDTO) airport;
 				if (dto.airportName.equals(this.airportName)) {
+					
 					System.out.println("airport name is matching");
-					return true;
+					if (dto.noOfEmpolyee.equals(this.noOfEmpolyee)) {
+						System.out.println("noOfEmpolyee is matching");
+						return true;
+					}
 				}
-				if (dto.noOfEmpolyee.equals(this.noOfEmpolyee)) {
-					System.out.println("noOfEmpolyee is matching");
-					return true;
-				}
+				
 				if (dto.airportLocated.equals(this.airportLocated)) {
 					System.out.println("airportLocated is matching");
 					return true;
