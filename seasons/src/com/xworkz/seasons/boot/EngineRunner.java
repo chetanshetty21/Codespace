@@ -19,7 +19,7 @@ public class EngineRunner {
 		System.out.println(Arrays.toString(bean));
 		System.out.println(Arrays.toString(container.getBeanDefinitionNames()));
 		System.out.println(container.getBeanDefinitionCount());
-		Engine ref1 = container.getBean( Engine.class);
+		Engine ref1 = container.getBean( "Engine",Engine.class);
 		System.out.println(ref1.getCompany());
 		
 	}

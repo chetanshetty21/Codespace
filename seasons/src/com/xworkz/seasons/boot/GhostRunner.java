@@ -18,5 +18,6 @@ public class GhostRunner {
 		System.out.println(container.getBeanDefinitionCount());
 		//Engine ref1 = container.getBean("engineName" Engine.class);
 		//System.out.println(ref1.getCompany());
+		
 	}
 }
