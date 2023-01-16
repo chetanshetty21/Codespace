@@ -16,7 +16,7 @@ public class Movie {
 	}
 
 	public void checkDirector() {
-		System.out.println(this.hashCode() + "hashcode of Director");
+		System.out.println(this.director.hashCode() + "hashcode of Director");
 
 	}
 
