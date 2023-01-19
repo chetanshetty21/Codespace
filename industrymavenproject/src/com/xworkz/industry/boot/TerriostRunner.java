@@ -1,6 +1,6 @@
 package com.xworkz.industry.boot;
 
-import com.xworkz.industry.DTO.TerriostDTO;
+import com.xworkz.industry.dto.TerriostDTO;
 import com.xworkz.industry.service.TerriostService;
 import com.xworkz.industry.service.TerriostServiceImpl;
 public class TerriostRunner {

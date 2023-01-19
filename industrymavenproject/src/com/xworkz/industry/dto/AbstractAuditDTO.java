@@ -1,4 +1,4 @@
-package com.xworkz.industry.DTO;
+package com.xworkz.industry.dto;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

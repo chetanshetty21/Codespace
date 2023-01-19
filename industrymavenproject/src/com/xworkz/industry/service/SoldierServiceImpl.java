@@ -7,8 +7,8 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 
-import com.xworkz.industry.DAO.SoldierDAO;
-import com.xworkz.industry.DTO.SoldierDTO;
+import com.xworkz.industry.dao.SoldierDAO;
+import com.xworkz.industry.dto.SoldierDTO;
 
 public class SoldierServiceImpl implements SoldierService{
 
@@ -40,4 +40,6 @@ public class SoldierServiceImpl implements SoldierService{
 
 		}
 	}
+
+	
 }

@@ -7,7 +7,7 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 
-import com.xworkz.industry.DTO.TerriostDTO;
+import com.xworkz.industry.dto.TerriostDTO;
 
 public class TerriostServiceImpl implements TerriostService
 {
@@ -31,4 +31,6 @@ public class TerriostServiceImpl implements TerriostService
 	
 
 }
+
+	
 }

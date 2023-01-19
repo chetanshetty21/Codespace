@@ -1,8 +1,9 @@
 package com.xworkz.industry.boot;
 
-import com.xworkz.industry.DAO.SoldierDAO;
-import com.xworkz.industry.DAO.SoldierDAOImpl;
-import com.xworkz.industry.DTO.SoldierDTO;
+import com.xworkz.industry.dto.SoldierDTO;
+import com.xworkz.industry.dao.SoldierDAO;
+import com.xworkz.industry.dao.SoldierDAOImpl;
+
 import com.xworkz.industry.service.SoldierServiceImpl;
 
 public class soldierRunner {

@@ -1,4 +1,4 @@
-package com.xworkz.industry.DTO;
+package com.xworkz.industry.dto;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;

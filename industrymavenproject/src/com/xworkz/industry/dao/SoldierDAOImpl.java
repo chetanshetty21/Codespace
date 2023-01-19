@@ -1,6 +1,6 @@
-package com.xworkz.industry.DAO;
+package com.xworkz.industry.dao;
 
-import com.xworkz.industry.DTO.SoldierDTO;
+import com.xworkz.industry.dto.SoldierDTO;
 
 public class SoldierDAOImpl implements SoldierDAO{
 	public SoldierDAOImpl() {
