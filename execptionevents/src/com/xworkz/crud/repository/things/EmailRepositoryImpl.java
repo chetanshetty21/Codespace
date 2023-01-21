@@ -12,7 +12,8 @@ public class EmailRepositoryImpl implements EmailRepository {
 	@Override
 	public boolean create(String email) {
 		System.out.println("running create gmail repo...");
-		if(this.emailIndex > this.emails.length) 
+		 
+		if(this.emailIndex < this.emails.length) 
 		{
 			throw new EmailSizeExceededexception();
 		}

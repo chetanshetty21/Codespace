@@ -21,6 +21,8 @@ public class PanRunner {
 		pannumberrepository.create("ytq1458");
 		pannumberrepository.create("ytq1459");
 		pannumberrepository.create("ytq1459");
+		pannumberrepository.create("ytq1459");
+		
 	}
 
 }

@@ -1,0 +1,156 @@
+  
+ 1 decribe the collection type hierarchy.what are the main interface and what are the difference between them?
+
+
+3)  Difference between Hashset and Treeset in Java
+
+
+                    Hash Set                                          Tree Set
+
+1	The Hash set is executed with                           The tree set is executed with the help
+      the help of a HashTable.	                                of a tree structure.  
+	  
+2	It does not authorise a heterogeneous object.	        It authorises a heterogeneous object.
+
+3	It permits a null object.	                                It does not permit the null object.
+
+4	To compare two objects, we use the equals method.	   To compare two objects, we use the compare method.
+
+5	It does not support any order	                            TreeSet supports an object in sorted order. 
+
+
+
+17)  what is the use of 
+   maven:- Maven is chiefly used for Java-based projects, helping to download dependencies, 
+   which refers to the libraries or JAR files. The tool helps get the right JAR files for each 
+   project as there may be different versions of separate packages 
+  
+  Gradel:Gradle is a build automation tool known for its flexibility to build software. A build automation 
+  tool is used to automate the creation of applications. The building process includes compiling, linking, 
+  and packaging the code. The process becomes more consistent with the help of build automation tools.
+
+  Tomcat:-Apache Tomcat server: Apache Tomcat is a web container. It allows the users to run Servlet 
+  and JAVA Server Pages that are based on the web-applications. It can be used as the HTTP server. 
+  The performance of the Tomcat server is not as good as the designated web server.
+
+  Quarkus:-Quarkus allows developers to automatically generate Kubernetes resources including building 
+   and deploying container images without having to manually create YAML files.
+  
+  SonarQube:- SonarQube  is an open-source platform developed by SonarSource for continuous inspection 
+  of code quality to perform automatic reviews with static analysis of code to detect bugs and code smells
+  on all programming languages.
+  
+  server:-A server stores, sends, and receives data. In essence, it "serves" something else and exists to 
+  provide services. A computer, software program, or even a storage device may act as a server, 
+  and it may provide one service or several.
+  
+  
+  
+ 18)
+ import java.util.LinkedList;
+  
+class test18 {
+    public static void main (String[] args) {
+        
+        LinkedList<String> list = new LinkedList<String>();
+  
+        list.add("apple");
+        list.add("ball");
+        list.add("cat");
+        list.add("dog");
+        list.add("elephant");
+     
+        System.out.println("LinkedList:\t" + list);
+         
+        System.out.println("The last element is removed:\t" + list.removeLast());  
+        
+        System.out.println("Final LinkedList:\t" + list);
+                
+        System.out.println("The first element is removed:\t" + list.removeFirst());
+         
+        System.out.println("Final LinkedList:\t" + list);
+    }
+}
+
+
+13)
+No.	StringBuffer	                                                                       StringBuilder
+1)	StringBuffer is synchronized i.e. thread safe.                   StringBuilder is non-synchronized i.e. not thread safe. 
+      It means two threads can't call the methods of              It means two threads can call the methods of StringBuilder simultaneously.
+	  StringBuffer simultaneously.	
+	  
+2)	StringBuffer is less efficient than StringBuilder.	             StringBuilder is more efficient than StringBuffer.
+
+3)	StringBuffer was introduced in Java 1.0	                          StringBuilder was introduced in Java 1.5
+
+
+14)
+                  BeanFactory                                                          ApplicationContext
+
+  It is a fundamental container that provides the basic       It is an advanced container that extends the BeanFactory that provides
+    functionality for managing beans.	                          all basic functionality and adds some advanced features.    
+	
+     It is suitable to build standalone applications.	         It is suitable to build Web applications, integration with AOP modules, 
+                                                                      ORM and distributed applications.
+																	  
+13)
+   In Spring AOP:- IT aspects are implemented using regular classes  or regular classes annotated 
+   with the @Aspect annotation (the @AspectJ style). Join point: a point during the execution of a program, such as the 
+   execution of a method or the handling of an exception.
+   
+   IOC:-The IoC pattern is a way of reversing the traditional approach to create and initialize Java objects. Rather than 
+   create objects directly within their code, developers ask a third party, such as the Spring container or the Java EE context, to 
+   provide instances instead.
+   
+   POJO:-POJO in Java stands for Plain Old Java Object. It is an ordinary object, which is not bound by any special restriction.
+   The POJO file does not require any special classpath. It increases the readability & re-usability of a Java program. 
+   POJOs are now widely accepted due to their easy maintenance.
+   
+   @componet:-A component is an object having a graphical representation that can be displayed on the screen and that can interact 
+   with the user. Examples of components are the buttons, checkboxes, and scrollbars of a typical graphical user interface.
+   
+   @compnentscan:-One of the most important annotations in spring is @ComponentScan which is used along with the @Configuration annotation 
+   to specify the packages that we want to be scanned. @ComponentScan without arguments tells Spring to scan the current
+   package and all of its sub-packages.
+   
+   @bean:- JavaBeans are classes that encapsulate many objects into a single object (the bean). It is a java class that 
+   should follow following conventions: Must implement Serializable. It should have a public no-arg constructor.
+   All properties in java bean must be private with public getters and setter methods.
+
+
+10)   Dependency injection is a programming technique that makes a class independent of its dependencies. It achieves that 
+       by decoupling the usage of an object from its creation. This helps you to follow SOLID's dependency inversion and 
+      single responsibility principles.   
+   
+   
+11)   In Spring Boot, we can use Spring Framework to define our beans and their dependency injection. 
+      The @ComponentScan annotation is used to find beans and the corresponding injected with @Autowired annotation. 
+	  If you followed the Spring Boot typical layout, no need to specify any arguments for @ComponentScan annotation. 
+
+9)    Core (spring-core) is the core of the framework that power features such as Inversion of Control and dependency injection. 
+       Beans (spring-beans) provides Beanfactory, which is a sophisticated implementation of the factory pattern.  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+
+
+
+
+
+
+
+
+
+  
+  
+ 

@@ -10,7 +10,7 @@ public class PanNoRepositoryImpl implements PanNumberRepository {
 	@Override
 	public boolean create(String PanNo) {
 		System.out.println("running create sweets repo...");
-		if (this.panNoIndex > this.panNo.length) {
+		if (this.panNoIndex < this.panNo.length) {
 			throw new PanSizeExceededexception();
 		}
 		this.panNo[panNoIndex] = PanNo;

@@ -22,8 +22,7 @@ public class SpringRunner {
 		boolean saved1 = service1.validateAndSave(new ResortDTO());
 		System.out.println(saved1);
 		
-		MissileService service2 = spring.getBean(MissileService.class);
-		boolean saved2 = service2.validateAndSave(new MissileDTO());
+		MissileService service2 = spring.getBean(MissileService.class);                                                                                                                                                                                                                                                                                                                       saved2 = service2.validateAndSave(new MissileDTO());
 		System.out.println(saved2);
 	
 	
