@@ -104,8 +104,7 @@ public class PersonServlets extends HttpServlet {
 		printWriter.print("<span style='color:yellow;'>");
 		printWriter.print("noofcars of the person " +  noofcars + "  is sent successfully");
 		printWriter.print("<br>");
-		
-		
+			
 		printWriter.print("</pre>");
 		printWriter.print("</span>");
 		printWriter.print("</h1>");
