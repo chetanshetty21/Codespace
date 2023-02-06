@@ -48,7 +48,7 @@
 		<div class="form-check">			 
 		<div></div>
 		 
-			<input class="form-check-input" type="radio"	id="flexRadioDefault1"
+			<input class="form-check-input" type="radio"	id="flexRadioDefault1" 
 				name="freefood" > 
 				<label class="form-check-label"  value="true"
 				for="flexRadioDefault1">    Yes </label>
@@ -68,14 +68,10 @@
 				name="freeAlcohol" > 
 				<label class="form-check-label" value="true"
 				for="flexRadioDefault1">    Yes </label>
-		</div>
-		<div class="form-check"> 
-		
-			<input class="form-check-input" type="radio" name="flexRadioDefault" 
-				id="freeAlcohol" > 
 				<label class="form-check-label" value="false"
-				for="flexRadioDefault2">    NO </label>
+				>    NO </label>
 		</div>
+		
 
 
 		<div>
