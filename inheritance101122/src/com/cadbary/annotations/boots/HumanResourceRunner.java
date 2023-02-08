@@ -9,6 +9,7 @@ public class HumanResourceRunner {
 		HumanResource humanresource = new Akshara();
 		humanresource.hire();
 		humanresource.fire();
+		
 	}
 
 }
