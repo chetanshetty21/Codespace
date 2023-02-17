@@ -12,12 +12,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.xworkz.valentine.dto.ValentineDTO;
 import com.xworkz.valentine.service.ValentineService;
 
 @Controller
-@RequestMapping("/love")
+@RequestMapping("/")
 public class ValentineController {
 
 	@Autowired
@@ -30,8 +31,20 @@ public class ValentineController {
 		System.out.println("creating" + this.getClass().getSimpleName());
 
 	}
+	@GetMapping("/search")
+	public String onSearch(@RequestParam int id, Model model) {
+		System.out.println("running the onSearch");
+		ValentineDTO dto= this.valentinService.findById(id);
+		if(dto!=null) {
+			model.addAttribute("dto", dto);
+		}
+		else {
+			model.addAttribute("message", "Data Not Found Enter proper Id");
+		}
+		return "ValentineSearch";
+	}
 
-	@GetMapping
+	@GetMapping("/love")
 	public String onValentine(Model model) {
 		System.out.println("this is onValentine get method");
 		model.addAttribute("places", places);
@@ -40,7 +53,7 @@ public class ValentineController {
 		return "valentine";
 	}
 
-	@PostMapping
+	@PostMapping("/love")
 	public String onValentine(Model model, ValentineDTO dto) {
 		System.out.println("running on onValentine post method");
 		Set<ConstraintViolation<ValentineDTO>> violations = valentinService.validateAndSave(dto);

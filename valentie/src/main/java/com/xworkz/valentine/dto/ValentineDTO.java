@@ -18,6 +18,7 @@ public class ValentineDTO {
 	private String places;
 	@NotBlank(message = "gift should be selectd")
 	private String gift;
+	private int id;
 	
 
 }

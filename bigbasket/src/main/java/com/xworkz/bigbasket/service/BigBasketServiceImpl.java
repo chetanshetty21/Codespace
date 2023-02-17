@@ -42,11 +42,11 @@ public class BigBasketServiceImpl implements BigBasketService {
 			entity.setEmail(dto.getEmail());
 			entity.setItems(dto.getItems());
 			entity.setNoOfWorkers(dto.getNoOfWorkers());
-			for(int i=0;i<dto.getPassWord().length();i++) {
-				if(dto.getPassWord().charAt(0)==) {
-					
-				}
-			}
+//			for(int i=0;i<dto.getPassWord().length();i++) {
+//				if(dto.getPassWord().charAt(0)==) {
+//					
+//				}
+//			}
 			entity.setPassWord(dto.getPassWord());
 			entity.setStoreLocation(dto.getStoreLocation());
 			entity.setPhoneNumber(dto.getPhoneNumber());

@@ -25,6 +25,7 @@
 				alt="" width="90" height="60" class="d-inline-block align-text-top">
 
 			<a href="index.jsp">home</a>
+						<a href="ValentineSearch.jsp">home</a>
 
 		</div>
 

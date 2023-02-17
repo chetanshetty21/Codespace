@@ -1,6 +1,7 @@
 package com.xworkz.valentine.service;
 
 import java.util.Collections;
+
 import java.util.Set;
 
 import javax.validation.ConstraintViolation;
@@ -17,10 +18,29 @@ import com.xworkz.valentine.entity.ValentineEntity;
 
 @Service
 public class ValentineServiceImpl implements ValentineService {
-@Autowired
-private ValentineDAO dao;
+	@Autowired
+	private ValentineDAO dao;
+
 	public ValentineServiceImpl() {
 		System.out.println("creating" + this.getClass().getSimpleName());
+	}
+
+	@Override
+	public ValentineDTO findById(int id) {
+		if (id > 0) {
+			ValentineEntity entity = this.dao.findById(id);
+			if (entity != null) {
+				System.out.println("entity is found in theservice for id" + id);
+				ValentineDTO dto = new ValentineDTO();
+				dto.setGift(entity.getGift());
+				dto.setName(entity.getName());
+				dto.setPlaces(entity.getPlaces());
+				dto.setValentineName(entity.getValentineName());
+				dto.setId(entity.getId());
+				return dto;
+			}
+		}
+		return ValentineService.super.findById(id);
 	}
 
 	@Override
@@ -32,7 +52,7 @@ private ValentineDAO dao;
 			System.err.println("constraintViolations in dto" + dto);
 			return constraintViolations;
 		} else {
-			System.out.println("constraintViolations does not exist data is good"+dto);
+			System.out.println("constraintViolations does not exist data is good" + dto);
 			ValentineEntity entity = new ValentineEntity();
 			entity.setGift(dto.getGift());
 			entity.setName(dto.getName());

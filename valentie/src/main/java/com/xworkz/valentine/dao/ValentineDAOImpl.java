@@ -31,5 +31,17 @@ public class ValentineDAOImpl implements ValentineDAO {
 		em.close();
 
 		return false;
+
 	}
+
+	@Override
+	public ValentineEntity findById(int id) {
+		System.out.println("find by id in dao" + id);
+		EntityManager entityManager = this.entityManagerFactory.createEntityManager();
+		ValentineEntity fromDb = entityManager.find(ValentineEntity.class, id);
+		entityManager.close();
+		return fromDb;
+
+	}
+
 }

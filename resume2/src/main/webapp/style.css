@@ -134,7 +134,7 @@ section .title::after {
 
 .navbar .menu li a {
 	display: block;
-	color: #fff;
+	color: #111;
 	font-size: 18px;
 	font-weight: 500;
 	margin-left: 25px;
@@ -248,7 +248,7 @@ section .title::after {
 }
 .services .title::after {
 	background: #fff;
-	content: "what i provide";
+	content: "what i Got";
 }
 
 
@@ -342,18 +342,18 @@ section .title::after {
 	
 }
 
-.education .title::before, .teams .title::before {
+.education .title::before {
 	background: #111;
 }
 
-.education .title::after, .teams .title::after {
+.education .title::after{
 	background: #fff;
 	content: "what i got";
 }
 
 .container {
 	margin: 40px auto;
-	max-width: 900px;
+	max-width: 700px;
 }
 
 .container .heading {
@@ -378,11 +378,11 @@ section .title::after {
 
 .container .accordion-container .accordion.active .accordion-heading h3
 	{
-	color: blue;
+	color: #00bfff;
 }
 
 .container .accordion-container .accordion.active .accordion-heading i {
-	color: #fff;
+	color: #000;
 	transform: rotate(180deg);
 	transition: transform .2s .1s;
 }
@@ -403,7 +403,7 @@ section .title::after {
 	align-items: center;
 	justify-content: space-between;
 	gap: 10px;
-	background: blue;
+	background: #00bfff;
 	border: 2px solid #000;
 	padding: 15px 20px;
 }
@@ -512,12 +512,12 @@ section .title::after {
 }
 
 .teams .title::before {
-	background: #fff;
+	background: #111;
 }
 
 .teams .title::after {
 	background: rgb(255, 255, 255);
-	content: "what i provide";
+	content: "what i Gained";
 }
 
 .container {
@@ -547,11 +547,11 @@ section .title::after {
 
 .container .accordion-container .accordion.active .accordion-heading h3
 	{
-	color: blue;
+	color: #00bfff;
 }
 
 .container .accordion-container .accordion.active .accordion-heading i {
-	color: #fff;
+	color: #000;
 	transform: rotate(180deg);
 	transition: transform .2s .1s;
 }
@@ -566,7 +566,7 @@ section .title::after {
 	align-items: center;
 	justify-content: space-between;
 	gap: 10px;
-	background: blue;
+	background: #00bfff;
 	border: 2px solid #000;
 	padding: 15px 20px;
 }
@@ -576,14 +576,14 @@ section .title::after {
 }
 
 .container .accordion-container .accordion .accordion-heading i {
-	font-size: 25px;;
+	font-size: 30px;;
 }
 
 .container .accordion-container .accordion .accordion-content {
 	padding: 15px 20px;
 	border: 2px solid #000;
-	font-size: 15px;
-	background: blue;
+	font-size: 20px;
+	background: #a3edec;
 	border-top: 0;
 	display: none;
 	animation: animate .2s linear backwards;
@@ -755,7 +755,7 @@ footer span a:hover {
 		width: 100%;
 		left: -100%;
 		top: 0;
-		background: #111;
+		background: #fff;
 		text-align: center;
 		padding-top: 80px;
 		transition: all 0.3s ease;
