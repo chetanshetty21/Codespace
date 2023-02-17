@@ -8,6 +8,10 @@
 	padding: 0;
 	box-sizing: border-box;
 	text-decoration: none;
+	font-family: 'Poppins', sans-serif;
+	text-transform: capitalize;
+	outline: none;
+	border: none;
 }
 
 html {
@@ -42,12 +46,12 @@ section {
 	margin: auto;
 }
 
-.about, .services, .skills, .teams, .contact, footer {
+.about, .services, .education, .skills, .teams, .contact, footer {
 	font-family: 'Poppins', sans-serif;
 }
 
-.about .about-content, .services .serv-content, .skills .skills-content,
-	.contact .contact-content {
+.about .about-content, .services .services-content , .education .education-content,
+	.skills .skills-content, .contact .contact-content {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -80,7 +84,7 @@ section .title::after {
 	bottom: -8px;
 	left: 50%;
 	font-size: 20px;
-	color: crimson;
+	color: #00bfff;
 	padding: 0 5px;
 	background: #fff;
 	transform: translateX(-50%);
@@ -94,11 +98,12 @@ section .title::after {
 	padding: 30px 0;
 	font-family: 'Ubuntu', sans-serif;
 	transition: all 0.3s ease;
+	
 }
 
 .navbar.sticky {
 	padding: 15px 0;
-	background: crimson;
+	background: #00bfff;
 }
 
 .navbar .max-width {
@@ -108,13 +113,13 @@ section .title::after {
 }
 
 .navbar .logo a {
-	color: #fff;
+	color: #111;
 	font-size: 35px;
 	font-weight: 600;
 }
 
 .navbar .logo a span {
-	color: crimson;
+	color: #00bfff;
 	transition: all 0.3s ease;
 }
 
@@ -137,16 +142,17 @@ section .title::after {
 }
 
 .navbar .menu li a:hover {
-	color: crimson;
+	color: #00bfff;
+	
 }
 
 .navbar.sticky .menu li a:hover {
-	color: #fff;
+	color: #00bfff;
 }
 
 /* menu btn styling */
 .menu-btn {
-	color: #fff;
+	color: #00bfff;
 	font-size: 23px;
 	cursor: pointer;
 	display: none;
@@ -156,7 +162,7 @@ section .title::after {
 	position: fixed;
 	height: 45px;
 	width: 42px;
-	background: crimson;
+	background: #00bfff;
 	right: 30px;
 	bottom: 10px;
 	text-align: center;
@@ -180,65 +186,6 @@ section .title::after {
 
 .scroll-up-btn:hover {
 	filter: brightness(90%);
-}
-
-/* home section styling */
-.home {
-	display: flex;
-	background: url("images/banner.jpg") no-repeat center;
-	height: 100vh;
-	color: #fff;
-	min-height: 500px;
-	background-size: cover;
-	background-attachment: fixed;
-	font-family: 'Ubuntu', sans-serif;
-}
-
-.home .max-width {
-	width: 100%;
-	display: flex;
-}
-
-.home .max-width .row {
-	margin-right: 0;
-}
-
-.home .home-content .text-1 {
-	font-size: 27px;
-}
-
-.home .home-content .text-2 {
-	font-size: 75px;
-	font-weight: 600;
-	margin-left: -3px;
-}
-
-.home .home-content .text-3 {
-	font-size: 40px;
-	margin: 5px 0;
-}
-
-.home .home-content .text-3 span {
-	color: crimson;
-	font-weight: 500;
-}
-
-.home .home-content a {
-	display: inline-block;
-	background: crimson;
-	color: #fff;
-	font-size: 25px;
-	padding: 12px 36px;
-	margin-top: 20px;
-	font-weight: 400;
-	border-radius: 6px;
-	border: 2px solid crimson;
-	transition: all 0.3s ease;
-}
-
-.home .home-content a:hover {
-	color: crimson;
-	background: none;
 }
 
 /* about section styling */
@@ -268,7 +215,7 @@ section .title::after {
 }
 
 .about .about-content .right .text span {
-	color: crimson;
+	color: #00bfff;
 }
 
 .about .about-content .right p {
@@ -277,14 +224,14 @@ section .title::after {
 
 .about .about-content .right a {
 	display: inline-block;
-	background: crimson;
+	background: #00bfff;
 	color: #fff;
 	font-size: 20px;
 	font-weight: 500;
 	padding: 10px 30px;
 	margin-top: 20px;
 	border-radius: 6px;
-	border: 2px solid crimson;
+	border: 2px solid #00bfff;
 	transition: all 0.3s ease;
 }
 
@@ -292,132 +239,199 @@ section .title::after {
 	color: crimson;
 	background: none;
 }
-
-/* experience section styling */
-.services, .teams {
-	color: #fff;
+/* services section styling */
+.service .title{
+	color: #111;
+}
+.service .title::before {
 	background: #111;
 }
-
-.services .title::before, .teams .title::before {
+.services .title::after {
 	background: #fff;
+	content: "what i provide";
 }
 
-.services .title::after, .teams .title::after {
-	background: #111;
-	content: "what i got";
+
+.container {
+	margin: 40px auto;
+	max-width: 700px;
 }
 
-.services .serv-content .card {
-	width: calc(50% - 20px);
-	background: #222;
+.container .heading {
 	text-align: center;
-	border-radius: 6px;
-	padding: 50px 25px;
+	font-size: 30px;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+.container .accordion-container {
+	padding: 0 20px;
+}
+
+.container .accordion-container .accordion {
+	margin-bottom: 20px;
 	cursor: pointer;
-	transition: all 0.3s ease;
 }
 
-.services .serv-content .card:hover {
-	
-	background: crimson;
+.container .accordion-container .accordion.active .accordion-heading {
+	background: #00bfff;
 }
 
-.services .serv-content .card .box {
-	transition: all 0.3s ease;
+.container .accordion-container .accordion.active .accordion-heading h3
+	{
+	color: #00bfff;
 }
 
-.services .serv-content .card:hover .box {
-	transform: scale(1.05);
+.container .accordion-container .accordion.active .accordion-heading i {
+	color: #000;
+	transform: rotate(180deg);
+	transition: transform .2s .1s;
 }
 
-.services .serv-content .card i {
+.container .accordion-container .accordion.active  i {
 	font-size: 50px;
-	color: crimson;
+	color:  #00bfff;
 	transition: color 0.3s ease;
-}
-.services .serv-content .card a {
-	font-size: 23px;
-	color: crimson;
-	transition: color 0.3s ease;
+	align-items: center;
 }
 
-.services .serv-content .card:hover i {
-	color: #fff;
+.container .accordion-container .accordion.active .accordion-content {
+	display: block;
 }
 
-.services .serv-content .card .text {
-	font-size: 20px;
-	font-weight: 500;
-	margin: 10px 0 7px 0;
+.container .accordion-container .accordion .accordion-heading {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	background: #00bfff;
+	border: 2px solid #000;
+	padding: 15px 20px;
 }
 
-.services .serv-content .card .text span {
+.container .accordion-container .accordion .accordion-heading h3 {
+	font-size: 18px;;
+}
+
+.container .accordion-container .accordion .accordion-heading i {
+	font-size: 25px;;
+}
+
+.container .accordion-container .accordion .accordion-content {
+	padding: 15px 20px;
+	border: 2px solid #000;
 	font-size: 15px;
+	background: blue;
+	border-top: 0;
+	display: none;
+	animation: animate .2s linear backwards;
+	line-height: 2;
+	transform-origin: top;
 }
 
+@keyframes animate { 0%{
+	transform: scaleY(0);
+}
+
+}
 
 /* .education section styling */
-.education, .teams {
-	color: #fff;
-	background: #111;
+.education .title {
+	color: #111;
+	
+	
 }
 
 .education .title::before, .teams .title::before {
-	background: #fff;
+	background: #111;
 }
 
 .education .title::after, .teams .title::after {
-	background: #111;
+	background: #fff;
 	content: "what i got";
 }
 
-.education .serv-content .card {
-	width: calc(100% - 20px);
-	background: #222;
+.container {
+	margin: 40px auto;
+	max-width: 900px;
+}
+
+.container .heading {
 	text-align: center;
-	border-radius: 6px;
-	padding: 50px 25px;
+	font-size: 30px;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+.container .accordion-container {
+	padding: 0 20px;
+}
+
+.container .accordion-container .accordion {
+	margin-bottom: 20px;
 	cursor: pointer;
-	transition: all 0.3s ease;
 }
 
-.education .serv-content .card:hover {
-	
-	background: crimson;
+.container .accordion-container .accordion.active .accordion-heading {
+	background: #00bfff;
 }
 
-.education .serv-content .card .box {
-	transition: all 0.3s ease;
+.container .accordion-container .accordion.active .accordion-heading h3
+	{
+	color: blue;
 }
 
-.education .serv-content .card:hover .box {
-	transform: scale(1.05);
-}
-
-.education .serv-content .card i {
-	font-size: 50px;
-	color: crimson;
-	transition: color 0.3s ease;
-}
-.education .serv-content .card a {
-	font-size: 23px;
-	color: crimson;
-	transition: color 0.3s ease;
-}
-
-.education .serv-content .card:hover i {
+.container .accordion-container .accordion.active .accordion-heading i {
 	color: #fff;
+	transform: rotate(180deg);
+	transition: transform .2s .1s;
 }
 
-.education .serv-content .card .text {
-	font-size: 20px;
-	font-weight: 500;
-	margin: 10px 0 7px 0;
+.container .accordion-container .accordion.active  i {
+	font-size: 50px;
+	color: #00bfff;
+	transition: color 0.3s ease;
+	align-items: center;
 }
 
-.education .serv-content .card .text span {
+.container .accordion-container .accordion.active .accordion-content {
+	display: block;
+}
+
+.container .accordion-container .accordion .accordion-heading {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	background: blue;
+	border: 2px solid #000;
+	padding: 15px 20px;
+}
+
+.container .accordion-container .accordion .accordion-heading h3 {
+	font-size: 18px;;
+}
+
+.container .accordion-container .accordion .accordion-heading i {
+	font-size: 25px;;
+}
+
+.container .accordion-container .accordion .accordion-content {
+	padding: 15px 20px;
+	border: 2px solid #000;
 	font-size: 15px;
+	background: blue;
+	border-top: 0;
+	display: none;
+	animation: animate .2s linear backwards;
+	line-height: 2;
+	transform-origin: top;
+}
+
+@keyframes animate { 0%{
+	transform: scaleY(0);
+}
+
 }
 /* skills section styling */
 .skills .title::after {
@@ -434,25 +448,8 @@ section .title::after {
 	margin-bottom: 10px;
 }
 
-.skills .skills-content .left p {
-	text-align: justify;
-}
-
-.skills .skills-content .left a {
-	display: inline-block;
-	background: crimson;
-	color: #fff;
-	font-size: 18px;
-	font-weight: 500;
-	padding: 8px 16px;
-	margin-top: 20px;
-	border-radius: 6px;
-	border: 2px solid crimson;
-	transition: all 0.3s ease;
-}
-
 .skills .skills-content .left a:hover {
-	color: crimson;
+	color: #00bfff;
 	background: none;
 }
 
@@ -485,7 +482,7 @@ section .title::after {
 	height: 100%;
 	left: 0;
 	top: 0;
-	background: crimson;
+	background: #00bfff;
 }
 
 .skills-content .right .html::before {
@@ -509,76 +506,95 @@ section .title::after {
 }
 
 /* teams section styling */
+.teams .title  {
+	color: #111;
+	
+}
+
+.teams .title::before {
+	background: #fff;
+}
+
 .teams .title::after {
-	content: "who with me";
+	background: rgb(255, 255, 255);
+	content: "what i provide";
 }
 
-.teams .carousel .card {
-	background: #222;
-	border-radius: 6px;
-	padding: 25px 35px;
+.container {
+	margin: 40px auto;
+	max-width: 700px;
+}
+
+.container .heading {
 	text-align: center;
-	overflow: hidden;
-	transition: all 0.3s ease;
+	font-size: 30px;
+	padding: 20px;
+	margin-bottom: 20px;
 }
 
-.teams .carousel .card:hover {
-	background: crimson;
+.container .accordion-container {
+	padding: 0 20px;
 }
 
-.teams .carousel .card .box {
+.container .accordion-container .accordion {
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+
+.container .accordion-container .accordion.active .accordion-heading {
+	background: #00bfff;
+}
+
+.container .accordion-container .accordion.active .accordion-heading h3
+	{
+	color: blue;
+}
+
+.container .accordion-container .accordion.active .accordion-heading i {
+	color: #fff;
+	transform: rotate(180deg);
+	transition: transform .2s .1s;
+}
+
+
+.container .accordion-container .accordion.active .accordion-content {
+	display: block;
+}
+
+.container .accordion-container .accordion .accordion-heading {
 	display: flex;
-	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-	transition: all 0.3s ease;
+	justify-content: space-between;
+	gap: 10px;
+	background: blue;
+	border: 2px solid #000;
+	padding: 15px 20px;
 }
 
-.teams .carousel .card:hover .box {
-	transform: scale(1.05);
+.container .accordion-container .accordion .accordion-heading h3 {
+	font-size: 18px;;
 }
 
-.teams .carousel .card .text {
-	font-size: 25px;
-	font-weight: 500;
-	margin: 10px 0 7px 0;
+.container .accordion-container .accordion .accordion-heading i {
+	font-size: 25px;;
 }
 
-.teams .carousel .card img {
-	height: 150px;
-	width: 150px;
-	object-fit: cover;
-	border-radius: 50%;
-	border: 5px solid crimson;
-	transition: all 0.3s ease;
+.container .accordion-container .accordion .accordion-content {
+	padding: 15px 20px;
+	border: 2px solid #000;
+	font-size: 15px;
+	background: blue;
+	border-top: 0;
+	display: none;
+	animation: animate .2s linear backwards;
+	line-height: 2;
+	transform-origin: top;
 }
 
-.teams .carousel .card:hover img {
-	border-color: #fff;
+@keyframes animate { 0%{
+	transform: scaleY(0);
 }
 
-.owl-dots {
-	text-align: center;
-	margin-top: 20px;
-}
-
-.owl-dot {
-	height: 13px;
-	width: 13px;
-	margin: 0 5px;
-	outline: none !important;
-	border-radius: 50%;
-	border: 2px solid crimson !important;
-	transition: all 0.3s ease;
-}
-
-.owl-dot.active {
-	width: 35px;
-	border-radius: 14px;
-}
-
-.owl-dot.active, .owl-dot:hover {
-	background: crimson !important;
 }
 
 /* contact section styling */
@@ -616,7 +632,7 @@ section .title::after {
 
 .contact .contact-content .row i {
 	font-size: 25px;
-	color: crimson;
+	color: #00bfff;
 }
 
 .contact .contact-content .info .head {
@@ -685,13 +701,13 @@ section .title::after {
 	border-radius: 6px;
 	cursor: pointer;
 	flex-wrap: nowrap;
-	background: crimson;
-	border: 2px solid crimson;
+	background: #00bfff;
+	border: 2px solid #00bfff;
 	transition: all 0.3s ease;
 }
 
 .right form .button-area button:hover {
-	color: crimson;
+	color: #00bfff;
 	background: none;
 }
 /* footer section styling */
@@ -703,7 +719,7 @@ footer {
 }
 
 footer span a {
-	color: crimson;
+	color: #00bfff;
 	text-decoration: none;
 }
 
@@ -783,6 +799,10 @@ footer span a:hover {
 		width: calc(50% - 10px);
 		margin-bottom: 20px;
 	}
+	.education .serv-content .card {
+		width: calc(50% - 10px);
+		margin-bottom: 20px;
+	}
 	.skills .skills-content .column, .contact .contact-content .column {
 		width: 100%;
 		margin-bottom: 35px;
@@ -803,6 +823,9 @@ footer span a:hover {
 		font-size: 20px;
 	}
 	.services .serv-content .card {
+		width: 100%;
+	}
+	.education .serv-content .card {
 		width: 100%;
 	}
 }
@@ -835,4 +858,8 @@ footer span a:hover {
 		font-size: 23px;
 		line-height: 38px;
 	}
+}
+hr.rounded {
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
 }

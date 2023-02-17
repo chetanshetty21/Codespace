@@ -5,9 +5,10 @@ import org.springframework.stereotype.Service;
 
 import com.xworkz.validating.dao.BakeryDAO;
 import com.xworkz.validating.dto.BakeryDTO;
+
 @Service
 public class BakeryServiceImpl implements BakeryService {
-	
+
 	@Autowired
 	private BakeryDAO bakerydao;
 
@@ -17,10 +18,9 @@ public class BakeryServiceImpl implements BakeryService {
 
 	public boolean validateAndSave(BakeryDTO dto) {
 		System.out.println("running the validateAndSave");
-		boolean save=this.bakerydao.save(dto);
-		System.out.println("saved "+save);
+		boolean save = this.bakerydao.save(dto);
+		System.out.println("saved " + save);
 		return false;
 	}
 
-	
 }
