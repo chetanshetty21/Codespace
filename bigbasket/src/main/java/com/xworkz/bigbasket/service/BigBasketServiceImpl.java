@@ -1,7 +1,9 @@
 package com.xworkz.bigbasket.service;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
@@ -29,6 +31,11 @@ public class BigBasketServiceImpl implements BigBasketService {
 		ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
 		Validator validator = factory.getValidator();
 		Set<ConstraintViolation<BigBasketDTO>> constraintViolations = validator.validate(dto);
+		
+		 
+		 //regular expression
+		 // Pa
+		 
 		if (constraintViolations != null && !constraintViolations.isEmpty()) {
 			System.err.println("constraintViolations in dto" + dto);
 			return constraintViolations;
@@ -42,16 +49,23 @@ public class BigBasketServiceImpl implements BigBasketService {
 			entity.setEmail(dto.getEmail());
 			entity.setItems(dto.getItems());
 			entity.setNoOfWorkers(dto.getNoOfWorkers());
-//			for(int i=0;i<dto.getPassWord().length();i++) {
-//				if(dto.getPassWord().charAt(0)==) {
-//					
-//				}
-//			}
+
+			
+			
 			entity.setPassWord(dto.getPassWord());
 			entity.setStoreLocation(dto.getStoreLocation());
 			entity.setPhoneNumber(dto.getPhoneNumber());
+			//
 			this.dao.save(entity);
 			return Collections.emptySet();
 		}
 	}
 }
+//	
+//	public static void main(String[] args) {
+//		boolean validPassword=Arrays.asList("Rudreshjj").stream().anyMatch(p->Character.isUpperCase(p.charAt(0)) && p.length()==8);
+//		
+//		System.out.println(Pattern.compile("[0-9][a-z]").matcher("a9").matches());
+//		System.out.println(validPassword);
+//	}
+//}
