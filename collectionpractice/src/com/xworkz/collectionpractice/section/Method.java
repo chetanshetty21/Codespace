@@ -2,9 +2,9 @@ package com.xworkz.collectionpractice.section;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.TreeSet;
+import java.util.Collections;
 
-public class Method {
+class Method {
 	public static void main(String[] args) {
 
 		String name1 = "chetan";
@@ -14,7 +14,8 @@ public class Method {
 		String name5 = "sita";
 		String name6 = "rama";
 
-		Collection<String> collection = new ArrayList();
+       Collection collection = new ArrayList();
+		//List<String> collection= new ArrayList<String>();
 		collection.add(name1);
 		collection.add(name6);
 		collection.add(name3);
@@ -24,8 +25,13 @@ public class Method {
 		collection.add("chotu");
 		System.out.println("this collection");
 		System.out.println("count =" + collection.size());
-		collection.clear();
+//	collection.clear();
 
-		System.out.println("after count =" + collection.size());
+		Collections.addAll(null, null)
+		//System.out.println("after count =" + collection.size());
+	boolean b=collection.addAll(collection)
+		System.out.println();
+		
+		
 	}
 }
