@@ -9,7 +9,7 @@ import com.xworkz.query.entity.QueryEntity;
 
 public class InsertRunner {
 	public static void main(String[] args) {
-		System.out.println("running main method for inserting dat to data base");
+		System.out.println("running main method for inserting data to data base");
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("com.xworkz.query");
 		EntityManager manager = factory.createEntityManager();
 		EntityTransaction transaction = manager.getTransaction();
@@ -17,13 +17,12 @@ public class InsertRunner {
 		QueryEntity entity1 = new QueryEntity(2, "Bhitarkanika Mangroves", "Odisha", 0, "mangrove wetland");
 		QueryEntity entity2 = new QueryEntity(3, "Bhagwan Mahaveer Sanctuary and Mollem National Park", "goa", 650,
 				"West Coast tropical evergreen forests");
-		QueryEntity entity3 = new QueryEntity(4, "Jakanari reserve forest", "combatore", 520.8, " reserve forest ");
+		QueryEntity entity3 = new QueryEntity(4, "Jakanari reserve forest", "combatore", 520, " reserve forest ");
 		QueryEntity entity4 = new QueryEntity(5, "jim Corbett National Park", "uttarakhand", 450,
 				"Dense moist deciduous forest");
 		QueryEntity entity5 = new QueryEntity(6, "Kanha National Park", "Madhya Pradesh", 651, "evergreen Sal forests");
 		QueryEntity entity6 = new QueryEntity(7, "Keibul Lamjao National Park", "Manipur", 40, "moist semi–evergreen");
-		QueryEntity entity7 = new QueryEntity(8, "Kukrail Reserve Forest", " Uttar Pradesh", 208.5,
-				"plantation forest");
+		QueryEntity entity7 = new QueryEntity(8, "Kukrail Reserve Forest", " Uttar Pradesh", 208, "plantation forest");
 		QueryEntity entity8 = new QueryEntity(9, "Namdapha National Park", "Arunachal Pradesh", 1985,
 				"tropical rain forest");
 		QueryEntity entity9 = new QueryEntity(10, "Nanmangalam forest", " Tamil Nadu", 24, "scrubland");
