@@ -23,7 +23,6 @@ import lombok.NoArgsConstructor;
 @NamedQuery(name = "findMaingodAndTotalDaysByName", query = "select entity.mainGod , entity.totalDays from FestivalEntity entity where  entity.name=:nameby")
 @NamedQuery(name = "findCount", query = "select count (entity) from FestivalEntity entity ")
 @NamedQuery(name = "findMax", query = "select max(entity.totalDays) from FestivalEntity entity")
-
 public class FestivalEntity {
 	@Id
 	@Column(name = "f_id")

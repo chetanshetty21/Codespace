@@ -785,7 +785,7 @@ footer span a:hover {
 		max-width: 930px;
 	}
 	.about .about-content .column {
-		width: 100%;
+		width: 50%;
 	}
 	.about .about-content .left {
 		display: flex;
