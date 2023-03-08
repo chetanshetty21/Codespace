@@ -12,14 +12,13 @@ public class WebInit extends AbstractAnnotationConfigDispatcherServletInitialize
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		// TODO Auto-generated method stub
+		System.out.println("this is getRootConfigClasses");
 		return null;
 	}
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
 		System.out.println("this is getServletConfigClasses");
-
 		return new Class[] { WebConfiguration.class };
 	}
 

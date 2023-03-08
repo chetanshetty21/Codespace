@@ -34,7 +34,7 @@ public class SareeController {
 	public String onSearch(@RequestParam int id, Model model) {
 		System.out.println("running the onSearch");
 		SareeDTO dto = this.sareeService.findById(id);
-		System.out.println("dto:"+dto);
+		System.out.println("dto:" + dto);
 		if (dto != null) {
 			model.addAttribute("dto", dto);
 		} else {
@@ -70,6 +70,47 @@ public class SareeController {
 
 		System.err.println("volation in controller");
 		return "Saree";
+
+	}
+
+	@GetMapping("/searchbyname")
+	public String onSearchByName(@RequestParam String name, Model model) {
+		System.out.println("running onsearchByName controller" + name);
+		List<SareeDTO> list = this.sareeService.findByName(name);
+		model.addAttribute("list", list);
+		return "NameSearch";
+	}
+
+	@GetMapping("/Update")
+	public String onUpdate(@RequestParam int id, Model model) {
+		System.out.println("running update get method");
+		System.out.println("running onUpdate " + id);
+		SareeDTO dto = this.sareeService.findById(id);
+		model.addAttribute("dto", dto);
+		model.addAttribute("size", size);
+		model.addAttribute("color", color);
+		return "Update";
+	}
+
+	@PostMapping("/Update")
+	public String onUpdate(SareeDTO dto, Model model) {
+		System.out.println("running onUpdate " + dto);
+
+		Set<ConstraintViolation<SareeDTO>> constraintViolations = this.sareeService.validateAndUpdate(dto);
+		if (constraintViolations.size() > 0) {
+			model.addAttribute("error", constraintViolations);
+		} else {
+			model.addAttribute("message", "update success");
+		}
+		return "Update";
+	}
+	@GetMapping("/delete")
+	public String onDelete(@RequestParam int id, Model model) {
+		System.out.println("running onDelete");
+		SareeDTO courtDto = this.sareeService.deleteById(id);
+		model.addAttribute("delete", courtDto);
+		model.addAttribute("message", "deleted successfully");
+		return "Delete";
 
 	}
 }

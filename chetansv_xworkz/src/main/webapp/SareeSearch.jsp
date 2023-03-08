@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,9 +39,9 @@
 
 
 	<h3 style="color: blue;">Search Results</h3>
-	Name : ${dto.name } <br> material : ${dto.material } <br>
-	modeOFpayemnt : ${dto.modeOFpayemnt } <br> size : ${dto.size } <br>
-	Gift : ${dto.color }
+	ID : ${dto.id }<br> Name : ${dto.name } <br> material :
+	${dto.material } <br> modeOFpayemnt : ${dto.modeOFpayemnt } <br>
+	size : ${dto.size } <br> Color : ${dto.color }
 </div>
 </body>
 </html>
