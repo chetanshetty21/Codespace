@@ -11,17 +11,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SareeDTO {
 	@Size(min = 3, max = 20, message = "Saree name should contain char min 3 and less than 20")
-	@Pattern(regexp = "^[a-zA-Z]+$", message = "Saree name should be store in char")
+	@Pattern(regexp = "^[a-zA-Z]+$", message = "Saree name should be stored in char")
 	private String name;
 	@Size(min = 3, max = 20, message = "Saree material should contain char min 3 and less than 20")
-	@Pattern(regexp = "^[a-zA-Z]+$", message = "Saree material should  be store in char")
+	@Pattern(regexp = "^[a-zA-Z]+$", message = "Saree material should  be stored in char")
 	private String material;
 	@Size(min = 3, max = 20, message = "modeOFpayemnt should contain char min 3 and less than 20")
-	@Pattern(regexp = "^[a-zA-Z]+$", message = "modeOFpayemnt should be store in char")
+	@Pattern(regexp = "^[a-zA-Z]+$", message = "modeOFpayemnt should be stored in char")
 	private String modeOFpayemnt;
-	@NotBlank(message = "size should be selectd")
+	@NotBlank(message = "size should be selected")
 	private String size;
-	@NotBlank(message = "color should be selectd")
+	@NotBlank(message = "color should be selected")
 	private String color;
 	private int id;
 

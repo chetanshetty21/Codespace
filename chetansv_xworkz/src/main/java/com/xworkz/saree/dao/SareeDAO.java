@@ -21,4 +21,13 @@ public interface SareeDAO {
 		return null;
 	}
 
+	default List<SareeEntity> findByAll() {
+		return null;
+	}
+
+	default List<SareeEntity> findByTwoProperties(String name, String color) {
+		return null;
+	}
+	
+
 }

@@ -13,7 +13,8 @@ import lombok.Data;
 @Entity
 @Table(name = "saree_table")
 @NamedQuery(name = "findByName", query = "select entity from SareeEntity entity where entity.name=:nameby")
-
+@NamedQuery(name = "findByAll", query = "select entity from SareeEntity entity")
+@NamedQuery(name = "findByTwoProperties", query = "select entity from SareeEntity entity where entity.name=:nameby or entity.color=:colorby")
 public class SareeEntity {
 	@Id
 	@Column(name = "s_id")

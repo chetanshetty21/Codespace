@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.xworkz.saree.dto.SareeDTO;
+import com.xworkz.saree.entity.SareeEntity;
 import com.xworkz.saree.service.SareeService;
 
 @Controller
@@ -104,13 +105,43 @@ public class SareeController {
 		}
 		return "Update";
 	}
+
 	@GetMapping("/delete")
 	public String onDelete(@RequestParam int id, Model model) {
 		System.out.println("running onDelete");
-		SareeDTO courtDto = this.sareeService.deleteById(id);
-		model.addAttribute("delete", courtDto);
+		SareeDTO sareeDto = this.sareeService.deleteById(id);
+		model.addAttribute("delete", sareeDto);
 		model.addAttribute("message", "deleted successfully");
 		return "Delete";
 
 	}
+
+	@GetMapping("/searchbyall")
+	public String onSearchByAll(Model model) {
+		System.out.println("running onsearchByAll controller");
+		List<SareeDTO> list = this.sareeService.findByAll();
+
+		if (list != null) {
+
+			model.addAttribute("list", list);
+		} else {
+			model.addAttribute("message", "found successfully");
+		}
+		return "SearchAll";
+	}
+
+	@PostMapping("/searchtwoproperties")
+	public String onSearchTwoProperties(@RequestParam String name, @RequestParam String color, Model model) {
+		System.out.println("running onsearchByName controller" + "property1" + name + "property2" + color);
+		List<SareeDTO> list = this.sareeService.findByTwoProperties(name, color);
+
+		if (list != null) {
+
+			model.addAttribute("list", list);
+		} else {
+			model.addAttribute("message", "found successfully");
+		}
+		return "SearchTwoProperties";
+	}
+
 }

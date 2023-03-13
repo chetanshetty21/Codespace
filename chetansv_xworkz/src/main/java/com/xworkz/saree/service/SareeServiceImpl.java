@@ -44,7 +44,7 @@ public class SareeServiceImpl implements SareeService {
 	@Override
 	public Set<ConstraintViolation<SareeDTO>> validateAndSave(SareeDTO dto) {
 		Set<ConstraintViolation<SareeDTO>> constraintViolations = validate(dto);
-		if (constraintViolations != null && !constraintViolations.isEmpty() ) {
+		if (constraintViolations != null && !constraintViolations.isEmpty()) {
 			System.err.println("constraintViolations in dto" + dto);
 			return constraintViolations;
 		} else {
@@ -114,4 +114,42 @@ public class SareeServiceImpl implements SareeService {
 			return SareeService.super.deleteById(id);
 		}
 	}
+
+	@Override
+	public List<SareeDTO> findByAll() {
+		System.out.println("running findByAll in service ");
+		System.out.println("Data is valid ....calling repo");
+		List<SareeEntity> entities = this.dao.findByAll();
+		List<SareeDTO> dtos = new ArrayList<SareeDTO>();
+		for (SareeEntity entity : entities) {
+			SareeDTO dto = new SareeDTO();
+			BeanUtils.copyProperties(entity, dto);
+			dtos.add(dto);
+		}
+		System.out.println("size of dtos" + dtos.size());
+		System.out.println("size of entites" + entities.size());
+		return dtos;
+
+	}
+
+	@Override
+	public List<SareeDTO> findByTwoProperties(String name, String color) {
+		System.out.println("running findByTwoProperties in service " + "property1" + name + "property2" + color);
+		if (name != null && !name.isEmpty() || color != null && !color.isEmpty()) {
+			System.out.println("Data is valid ....calling repo");
+			List<SareeEntity> entities = this.dao.findByTwoProperties(name, color);
+			List<SareeDTO> dtos = new ArrayList<SareeDTO>();
+			for (SareeEntity entity : entities) {
+				SareeDTO dto = new SareeDTO();
+				BeanUtils.copyProperties(entity, dto);
+				//dto.setName(entity.getName()); getu  first in bean utils 
+				dtos.add(dto);
+			}
+			System.out.println("size of dtos" + dtos.size());
+			System.out.println("size of entites" + entities.size());
+			return dtos;
+		}
+		return SareeService.super.findByTwoProperties(name, color);
+	}
+
 }

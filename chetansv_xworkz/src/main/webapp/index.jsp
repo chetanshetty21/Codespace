@@ -24,11 +24,15 @@
 
 			<ul class="nav justify-content-end">
 				<li class="nav-item"><a class="nav-link active"
-					aria-current="page" href="style">SearchDetails</a></li>
+					aria-current="page" href="style">EnterSareeDetails</a></li>
 				<li class="nav-item"><a class="nav-link" href="SareeSearch.jsp">SearchByID</a>
 				</li>
-				<li class="nav-item"><a class="nav-link" href="NameSearch.jsp">SearchBYName</a>
+				<li class="nav-item"><a class="nav-link" href="NameSearch.jsp">SearchByName</a>
 				</li>
+				<li class="nav-item"><a class="nav-link" href="SearchAll.jsp">SearchByAll</a>
+				</li>
+				<li class="nav-item"><a class="nav-link"
+					href="SearchTwoProperties.jsp">SearchByTwoProperties</a></li>
 
 
 			</ul>

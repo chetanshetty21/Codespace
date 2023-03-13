@@ -89,4 +89,37 @@ public class SareeDAOImpl implements SareeDAO {
 		}
 
 	}
+
+	@Override
+	public List<SareeEntity> findByAll() {
+		EntityManager manager = this.entityManagerFactory.createEntityManager();
+		try {
+			Query query = manager.createNamedQuery("findByAll");
+			System.out.println("Query:" + query);
+			List<SareeEntity> list = query.getResultList();
+			System.out.println("total list found in repo" + list.size());
+			return list;
+		} finally {
+			manager.close();
+			System.out.println("released the connection...");
+		}
+	}
+
+	@Override
+	public List<SareeEntity> findByTwoProperties(String name, String color) {
+		EntityManager manager = this.entityManagerFactory.createEntityManager();
+		try {
+			Query query = manager.createNamedQuery("findByTwoProperties");
+			System.out.println("Query:" + query);
+			query.setParameter("nameby", name);
+			query.setParameter("colorby", color);
+			List<SareeEntity> list = query.getResultList();
+			System.out.println("total list found in repo" + list.size());
+			return list;
+		} finally {
+			manager.close();
+			System.out.println("released the connection...");
+		}
+	}
+
 }
