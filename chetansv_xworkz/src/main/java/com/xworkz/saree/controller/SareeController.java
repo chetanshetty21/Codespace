@@ -14,12 +14,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.xworkz.saree.configuration.WebConfiguration;
 import com.xworkz.saree.dto.SareeDTO;
 import com.xworkz.saree.entity.SareeEntity;
 import com.xworkz.saree.service.SareeService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
 @RequestMapping("/")
+@Slf4j
 public class SareeController {
 	@Autowired
 	private SareeService sareeService;
@@ -27,15 +31,15 @@ public class SareeController {
 	private List<String> color = Arrays.asList("red", "green", "blue", "grey");
 
 	public SareeController() {
-		System.out.println("creating" + this.getClass().getSimpleName());
+		log.info("creating" + this.getClass().getSimpleName());
 
 	}
 
 	@GetMapping("/search")
 	public String onSearch(@RequestParam int id, Model model) {
-		System.out.println("running the onSearch");
+		log.info("running the onSearch");
 		SareeDTO dto = this.sareeService.findById(id);
-		System.out.println("dto:" + dto);
+		log.info("dto:" + dto);
 		if (dto != null) {
 			model.addAttribute("dto", dto);
 		} else {
@@ -46,7 +50,7 @@ public class SareeController {
 
 	@GetMapping("/style")
 	public String onSaree(Model model) {
-		System.out.println("this is onsaree get method");
+		log.info("this is onsaree get method");
 		model.addAttribute("size", size);
 		model.addAttribute("color", color);
 
@@ -55,10 +59,10 @@ public class SareeController {
 
 	@PostMapping("/style")
 	public String onSaree(Model model, SareeDTO dto) {
-		System.out.println("running on onValentine post method");
+		log.info("running on onValentine post method");
 		Set<ConstraintViolation<SareeDTO>> violations = sareeService.validateAndSave(dto);
 		if (violations.isEmpty()) {
-			System.out.println("no volations in contoller go to success page");
+			log.info("no volations in contoller go to success page");
 			model.addAttribute("size", size);
 			model.addAttribute("color", color);
 			return "sareeSucess";
@@ -69,14 +73,14 @@ public class SareeController {
 		model.addAttribute("errors", violations);
 		model.addAttribute("dto", dto);
 
-		System.err.println("volation in controller");
+		log.info("volation in controller");
 		return "Saree";
 
 	}
 
 	@GetMapping("/searchbyname")
 	public String onSearchByName(@RequestParam String name, Model model) {
-		System.out.println("running onsearchByName controller" + name);
+		log.info("running onsearchByName controller" + name);
 		List<SareeDTO> list = this.sareeService.findByName(name);
 		model.addAttribute("list", list);
 		return "NameSearch";
@@ -84,8 +88,8 @@ public class SareeController {
 
 	@GetMapping("/Update")
 	public String onUpdate(@RequestParam int id, Model model) {
-		System.out.println("running update get method");
-		System.out.println("running onUpdate " + id);
+		log.info("running update get method");
+		log.info("running onUpdate " + id);
 		SareeDTO dto = this.sareeService.findById(id);
 		model.addAttribute("dto", dto);
 		model.addAttribute("size", size);
@@ -95,7 +99,7 @@ public class SareeController {
 
 	@PostMapping("/Update")
 	public String onUpdate(SareeDTO dto, Model model) {
-		System.out.println("running onUpdate " + dto);
+		log.info("running onUpdate " + dto);
 
 		Set<ConstraintViolation<SareeDTO>> constraintViolations = this.sareeService.validateAndUpdate(dto);
 		if (constraintViolations.size() > 0) {
@@ -108,7 +112,7 @@ public class SareeController {
 
 	@GetMapping("/delete")
 	public String onDelete(@RequestParam int id, Model model) {
-		System.out.println("running onDelete");
+		log.info("running onDelete");
 		SareeDTO sareeDto = this.sareeService.deleteById(id);
 		model.addAttribute("delete", sareeDto);
 		model.addAttribute("message", "deleted successfully");
@@ -118,7 +122,7 @@ public class SareeController {
 
 	@GetMapping("/searchbyall")
 	public String onSearchByAll(Model model) {
-		System.out.println("running onsearchByAll controller");
+		log.info("running onsearchByAll controller");
 		List<SareeDTO> list = this.sareeService.findByAll();
 
 		if (list != null) {
@@ -132,14 +136,15 @@ public class SareeController {
 
 	@PostMapping("/searchtwoproperties")
 	public String onSearchTwoProperties(@RequestParam String name, @RequestParam String color, Model model) {
-		System.out.println("running onsearchByName controller" + "property1" + name + "property2" + color);
+		log.info("running onsearchByName controller" + "property1" + name + "property2" + color);
 		List<SareeDTO> list = this.sareeService.findByTwoProperties(name, color);
 
 		if (list != null) {
 
 			model.addAttribute("list", list);
+			
 		} else {
-			model.addAttribute("message", "found successfully");
+			model.addAttribute("message", "Data not found");
 		}
 		return "SearchTwoProperties";
 	}

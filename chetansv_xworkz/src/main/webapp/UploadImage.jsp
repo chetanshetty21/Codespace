@@ -23,26 +23,17 @@
 				alt="" width="90" height="60" class="d-inline-block align-text-top">
 
 			<ul class="nav justify-content-end">
-				<li class="nav-item"><a class="nav-link active"
-					aria-current="page" href="style">EnterSareeDetails</a></li>
-				<li class="nav-item"><a class="nav-link" href="SareeSearch.jsp">SearchByID</a>
-				</li>
-				<li class="nav-item"><a class="nav-link" href="NameSearch.jsp">SearchByName</a>
-				</li>
-				<li class="nav-item"><a class="nav-link" href="SearchAll.jsp">SearchByAll</a>
-				</li>
-				<li class="nav-item"><a class="nav-link"
-					href="SearchTwoProperties.jsp">SearchByTwoProperties</a></li>
-				<li class="nav-item"><a class="nav-link" href="UploadImage.jsp">UploadImage</a></li>
-				<li class="nav-item"><a class="nav-link" href="display.jsp">DisplayImage</a></li>
-
+				<li class="nav-item"><a class="nav-link" href="Index.jsp">IndexPage</a>
 			</ul>
-
-
 		</div>
 
 	</nav>
-	<p class="fs-1">WELCOME TO THE SAREE WORLD</p>
+	<h1>Upload Image Test</h1>
+	<form action="upload" method="post" enctype="multipart/form-data">
+		Upload:<input type="file" name="img" /> <input type="submit"
+			value="Upload" />
+
+	</form>
 </body>
 </html>
 

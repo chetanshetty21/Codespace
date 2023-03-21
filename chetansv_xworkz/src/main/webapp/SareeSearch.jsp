@@ -32,7 +32,7 @@
 	<span style="color: red;">${message}</span>
 </h3>
 <form action="search" method="get">
-	Search By Id <input type="text" name="id" /> <input type="submit"
+	Search By Id <input type="text" name="id" /><input type="submit"
 		value="search" class="btn btn-primary" />
 </form>
 <div>
@@ -40,7 +40,7 @@
 
 	<h3 style="color: blue;">Search Results</h3>
 	ID : ${dto.id }<br> Name : ${dto.name } <br> material :
-	${dto.material } <br> modeOFpayemnt : ${dto.modeOFpayemnt } <br>
+	${dto.material} <br> modeOFpayemnt : ${dto.modeOFpayemnt} <br>
 	size : ${dto.size } <br> Color : ${dto.color }
 </div>
 </body>

@@ -14,17 +14,21 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.xworkz.saree.configuration.WebConfiguration;
 import com.xworkz.saree.dao.SareeDAO;
 import com.xworkz.saree.dto.SareeDTO;
 import com.xworkz.saree.entity.SareeEntity;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class SareeServiceImpl implements SareeService {
 	@Autowired
 	private SareeDAO dao;
 
 	public SareeServiceImpl() {
-		System.out.println("creating" + this.getClass().getSimpleName());
+		log.info("creating" + this.getClass().getSimpleName());
 	}
 
 	@Override
@@ -32,7 +36,7 @@ public class SareeServiceImpl implements SareeService {
 		if (id > 0) {
 			SareeEntity entity = this.dao.findById(id);
 			if (entity != null) {
-				System.out.println("entity is found in theservice for id" + id);
+				log.info("entity is found in theservice for id" + id);
 				SareeDTO dto = new SareeDTO();
 				BeanUtils.copyProperties(entity, dto);
 				return dto;
@@ -45,10 +49,10 @@ public class SareeServiceImpl implements SareeService {
 	public Set<ConstraintViolation<SareeDTO>> validateAndSave(SareeDTO dto) {
 		Set<ConstraintViolation<SareeDTO>> constraintViolations = validate(dto);
 		if (constraintViolations != null && !constraintViolations.isEmpty()) {
-			System.err.println("constraintViolations in dto" + dto);
+			log.info("constraintViolations in dto" + dto);
 			return constraintViolations;
 		} else {
-			System.out.println("constraintViolations does not exist data is good" + dto);
+			log.info("constraintViolations does not exist data is good" + dto);
 			SareeEntity entity = new SareeEntity();
 			BeanUtils.copyProperties(dto, entity);
 			this.dao.save(entity);
@@ -69,8 +73,8 @@ public class SareeServiceImpl implements SareeService {
 				BeanUtils.copyProperties(entity, dto);
 				dtos.add(dto);
 			}
-			System.out.println("size of dtos" + dtos.size());
-			System.out.println("size of entites" + entities.size());
+			log.info("size of dtos" + dtos.size());
+			log.info("size of entites" + entities.size());
 			return dtos;
 		}
 		return SareeService.super.findByName(name);
@@ -84,7 +88,7 @@ public class SareeServiceImpl implements SareeService {
 			return violations;
 		} else {
 
-			System.out.println("no violations can save the data");
+			log.info("no violations can save the data");
 			SareeEntity entity = new SareeEntity();
 			BeanUtils.copyProperties(sareeDTO, entity);
 			boolean saved = this.dao.update(entity);
@@ -103,7 +107,7 @@ public class SareeServiceImpl implements SareeService {
 
 	@Override
 	public SareeDTO deleteById(int id) {
-		System.out.println("running onDelete");
+		log.info("running onDelete");
 		SareeEntity entity = this.dao.deleteById(id);
 
 		if (entity != null) {
@@ -117,8 +121,8 @@ public class SareeServiceImpl implements SareeService {
 
 	@Override
 	public List<SareeDTO> findByAll() {
-		System.out.println("running findByAll in service ");
-		System.out.println("Data is valid ....calling repo");
+		log.info("running findByAll in service ");
+		log.info("Data is valid ....calling repo");
 		List<SareeEntity> entities = this.dao.findByAll();
 		List<SareeDTO> dtos = new ArrayList<SareeDTO>();
 		for (SareeEntity entity : entities) {
@@ -126,17 +130,17 @@ public class SareeServiceImpl implements SareeService {
 			BeanUtils.copyProperties(entity, dto);
 			dtos.add(dto);
 		}
-		System.out.println("size of dtos" + dtos.size());
-		System.out.println("size of entites" + entities.size());
+		log.info("size of dtos" + dtos.size());
+		log.info("size of entites" + entities.size());
 		return dtos;
 
 	}
 
 	@Override
 	public List<SareeDTO> findByTwoProperties(String name, String color) {
-		System.out.println("running findByTwoProperties in service " + "property1" + name + "property2" + color);
+		log.info("running findByTwoProperties in service " + "property1" + name + "property2" + color);
 		if (name != null && !name.isEmpty() || color != null && !color.isEmpty()) {
-			System.out.println("Data is valid ....calling repo");
+			log.info("Data is valid ....calling repo");
 			List<SareeEntity> entities = this.dao.findByTwoProperties(name, color);
 			List<SareeDTO> dtos = new ArrayList<SareeDTO>();
 			for (SareeEntity entity : entities) {
@@ -145,8 +149,8 @@ public class SareeServiceImpl implements SareeService {
 				//dto.setName(entity.getName()); getu  first in bean utils 
 				dtos.add(dto);
 			}
-			System.out.println("size of dtos" + dtos.size());
-			System.out.println("size of entites" + entities.size());
+			log.info("size of dtos" + dtos.size());
+			log.info("size of entites" + entities.size());
 			return dtos;
 		}
 		return SareeService.super.findByTwoProperties(name, color);

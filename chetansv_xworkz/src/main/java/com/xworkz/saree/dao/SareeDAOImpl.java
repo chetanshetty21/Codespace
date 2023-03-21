@@ -10,16 +10,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.Query;
+
+import com.xworkz.saree.configuration.WebConfiguration;
 import com.xworkz.saree.entity.SareeEntity;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Repository
+@Slf4j
 public class SareeDAOImpl implements SareeDAO {
 	@Autowired
 	private EntityManagerFactory entityManagerFactory;
 
 	@Override
 	public boolean save(SareeEntity entity) {
-		System.out.println("running save in dao");
+		log.info("running save in dao");
 		EntityManager em = this.entityManagerFactory.createEntityManager();
 		EntityTransaction et = em.getTransaction();
 
@@ -33,7 +38,7 @@ public class SareeDAOImpl implements SareeDAO {
 
 	@Override
 	public SareeEntity findById(int id) {
-		System.out.println("find by id in dao" + id);
+		log.info("find by id in dao" + id);
 		EntityManager entityManager = this.entityManagerFactory.createEntityManager();
 		SareeEntity fromDb = entityManager.find(SareeEntity.class, id);
 		entityManager.close();
@@ -47,19 +52,19 @@ public class SareeDAOImpl implements SareeDAO {
 		try {
 			Query query = manager.createNamedQuery("findByName");
 			query.setParameter("nameby", name);
-			System.out.println("Query  :" + query);
+			log.info("Query  :" + query);
 			List<SareeEntity> list = query.getResultList();
-			System.out.println("total list found in repo" + list.size());
+			log.info("total list found in repo" + list.size());
 			return list;
 		} finally {
 			manager.close();
-			System.out.println("released the connection...");
+			log.info("released the connection...");
 		}
 	}
 
 	@Override
 	public boolean update(SareeEntity entity) {
-		System.out.println("created" + getClass().getSimpleName());
+		log.info("created" + getClass().getSimpleName());
 		EntityManager manager = this.entityManagerFactory.createEntityManager();
 		try {
 			EntityTransaction transaction = manager.getTransaction();

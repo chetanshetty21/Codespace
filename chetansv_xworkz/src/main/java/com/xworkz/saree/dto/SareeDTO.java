@@ -4,11 +4,15 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.xworkz.saree.configuration.WebConfiguration;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Data
 @NoArgsConstructor
+
 public class SareeDTO {
 	@Size(min = 3, max = 20, message = "Saree name should contain char min 3 and less than 20")
 	@Pattern(regexp = "^[a-zA-Z]+$", message = "Saree name should be stored in char")
